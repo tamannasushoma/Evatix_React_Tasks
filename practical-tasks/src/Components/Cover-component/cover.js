@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../Nav-component/navbar';
 function Cover () {
    
-    const [navbarOpen, setNavbarOpen] = React.useState(false);
+    
         return ( 
             <div>
                
@@ -27,6 +27,7 @@ function Cover () {
 
                                     {/* buttons */}
                                 <div className="inline-flex mt-5">
+                                    
                                 <button className="bg-white hover:bg-blue-100 text-blue-500 text-xs uppercase font-bold py-2 px-4 mr-3 rounded">Hire Me</button>
                                 <button className="bg-transparent hover:bg-white text-white hover:text-blue-500 ring-2 ring-white text-xs uppercase font-bold py-2 px-4 rounded">Portfolio</button>
                                 </div>
