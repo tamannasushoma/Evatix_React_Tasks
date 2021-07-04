@@ -5,7 +5,7 @@ class Card extends Component {
   render() {
     return (
       <div>
-        <div className="max-w-xs py-3 px-6 bg-white shadow-md rounded-lg my-20 ml-4 mr-4">
+        <div className="max-w-xs py-3 px-6 bg-white shadow-md rounded-lg my-10 lg:my-20 ml-8 lg:ml-4 lg:mr-4">
           <div>
           <h2 className="text-gray-800 text-xl text-left text-blue-600 font-normal  mb-2">Business Work Flow</h2>
             <h2 className="text-gray-800 text-2xl text-left font-semibold">Plurality</h2>

@@ -11,12 +11,12 @@ function Cover () {
                   <Navbar/>
               {/* navbar ends */}
 
-                    <div className="grid grid-flow-col sm:grid-cols-1 lg:grid-cols-1 lg:grid-cols-5 gap-2 mt-5 ">
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 gap-2 mt-3 md:mt-5 ">
                     
 
                         <div className="sm:col-span-1 lg:col-span-3 grid lg:grid-cols-5 sm:text-center md:text-center lg:text-left mt-8 ">
-                            <div className="lg:col-span-1"></div>
-                            <div className="lg:col-span-4">
+                            <div className=" col-span-0 lg:col-span-1"></div>
+                            <div className="lg:col-span-4 ">
                                 <p className="text-xs text-white uppercase mb-1">Buisness Workflow</p>
                                 <div className="">
                                     <h2 className=" text-white text-3xl font-semibold uppercase mb-2 ">get the most effecient<br/> ui design for your<br/> buisness now!</h2> 
@@ -35,16 +35,18 @@ function Cover () {
                         </div>
 
                         <div className="sm:col-span-1 lg:col-span-2 ">
-                            <img src="/images/image_02.png" className=" max-w-xs" alt="" />
+                            <img src="/images/image_02.png" className="ml-36 lg:ml-0 max-w-xs" alt="" />
                         </div>
 
                     </div>
                         {/* wave image */}
-                        <div className="mt-8 h-36 grid grid-rows-2"></div>
-                        <div className=" topMargin absolute mt-8">
-                            <img src="/images/Shape_02@2x.png" className="md:hidden sm:hidden lg:block" alt="" />
+                        <div className="mt-8 h-36 hidden lg:block lg:grid grid-rows-2"></div>
+                        <div className=" mt-8">
+                            <img src="/images/Shape_02@2x.png" className=" hidden lg:block topMargin absolute" alt="" />
+                            <img src="/images/Shape_02@2x.png" className=" block lg:hidden topMarginsm absolute" alt="" />
                             
                         </div>
+                        
                 </div>
             </div>
          );

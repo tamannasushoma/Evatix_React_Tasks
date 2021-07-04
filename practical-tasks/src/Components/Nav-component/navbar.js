@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
@@ -8,21 +9,21 @@ function Navbar({ fixed }) {
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a
-              className=" md:hidden sm:hidden lg:block"
+              className="hidden lg:block"
               href="#"
             >
               <img src="/images/logo_white.png" className=" h-8" alt="" />
             </a>
 
             <a
-              className="sm:hidden lg:hidden md:block "
+            className="hidden md:block lg:hidden "
               href="#"
             >
               <img src="/images/logo_white@2x.png" className="h-8" alt="" />
             </a>
 
             <a
-              className=" md:hidden lg:hidden sm:block"
+              className="block md:hidden lg:hidden"
               href="#"
             >
              <img src="/images/logo_02.png" className="h-8" alt="" />
@@ -30,7 +31,7 @@ function Navbar({ fixed }) {
 
 
             <button
-              className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+              className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-white rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
