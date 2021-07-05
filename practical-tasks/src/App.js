@@ -1,46 +1,58 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Button from './components/buttons/buttons';
-import Code from './components/code/code';
-class App extends Component {
-  // state = { 
-  //   users:[]
-  //  }
-   
-   
+import React, { useEffect } from 'react';
+import {
+  Switch,
+  Route,
+  useLocation
+} from 'react-router-dom';
 
-  //  componentDidMount() {
-  //   axios.get(`https://jsonplaceholder.typicode.com/users`)
-  //     .then(res => {
-  //       const users = res.data;
-  //       this.setState({ users });
-  //       console.log(this.state);
-  //     })
-  // }
+import './css/style.scss';
 
-  // deleteHandler=id=> {
-  //   return users.filter(user.id!=id);
-  // }
+import AOS from 'aos';
+import { focusHandling } from 'cruip-js-toolkit';
 
-  render() { 
-    return ( 
-      <div>
-        {/* <ul>
-         {this.state.users.map(user=>
-           <li>
-             <h4>{user.name}</h4>
-             <p>know more about this person at <a href="https://www.google.com"> {user.website}</a></p>
-          <button  onClick={deleteHandler(user.id)}>delete</button>
-             </li>
-           )}
-        </ul> */}
-         <div className="mr-5"> 
-         <p> hi there, i need to write some code here, <Code Font="14px"> let diameter = radius*2</Code>, click the button to run this</p>
-         <Button styleName="mr-5" Textcolor="blue" onClick={()=> console.log("clicked")} > Click this</Button>
-         </div>
-      </div>
-     );
-  }
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import ResetPassword from './pages/ResetPassword';
+
+function App() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: 'phone',
+      duration: 700,
+      easing: 'ease-out-cubic',
+    });
+  });
+
+  useEffect(() => {
+    document.querySelector('html').style.scrollBehavior = 'auto'
+    window.scroll({ top: 0 })
+    document.querySelector('html').style.scrollBehavior = ''
+    focusHandling('outline');
+  }, [location.pathname]); // triggered on route change
+
+  return (
+    <>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/signin">
+          <SignIn />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/reset-password">
+          <ResetPassword />
+        </Route>
+      </Switch>
+    </>
+  );
 }
- 
+
 export default App;
